@@ -2,8 +2,23 @@
   "name": "protoshop",
   "version": "1.0.0",
   "description": "Design with code in the browser using artboards and layers.",
-  "main": "index.js",
+  "main": "dist/protoshop.js",
   "repository": "https://github.com/ericyoungberg/protoshop",
   "author": "Eric Youngberg <eric@lmtlss.net>",
-  "license": "MIT"
+  "license": "MIT",
+  "module": "dist/protoshop.es.js",
+  "unpkg": "dist/protoshop.min.js",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "rollup": "^1.16.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.1.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-scss": "^1.0.2",
+    "rollup-plugin-terser": "^5.0.0"
+  }
 }

@@ -1,12 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ProtoShop Example</title>
+<html nighteye="disabled" lang="en">
 
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no ">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="files/leaflet_002.css">
+    <link rel="stylesheet" href="files/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>ProtoShop Example</title>
 </head>
-<body>
+
+<body cz-shortcut-listen="true">
+    <div id="root">
+        <div class="App">
+            <div class="map-layer">
+                <div class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" style="position: relative; outline: currentcolor none medium;" tabindex="0">
+                    <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, -12px, 0px);">
+                        <div class="leaflet-pane leaflet-tile-pane">
+                            <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                                <div class="leaflet-tile-container leaflet-zoom-animated" style="transform: translate3d(-601px, -584px, 0px) scale(2);"></div>
+                                <div class="leaflet-tile-container leaflet-zoom-animated" style="transform: translate3d(-601px, -584px, 0px) scale(1);"><img alt="" role="presentation" src="files/3213_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(982px, 970px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3213_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1238px, 970px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3212_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(982px, 714px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3212_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1238px, 714px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3214_005.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(982px, 1226px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3214_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1238px, 1226px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3213_006.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(726px, 970px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3213.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1494px, 970px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3212_005.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(726px, 714px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3212.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1494px, 714px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3214_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(726px, 1226px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3214_006.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1494px, 1226px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3211_006.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(982px, 458px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3211_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1238px, 458px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3215_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(982px, 1482px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3215_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1238px, 1482px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3211_005.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(726px, 458px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3211_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1494px, 458px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3213_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(470px, 970px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3213_005.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1750px, 970px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3215.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(726px, 1482px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3215_005.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1494px, 1482px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3212_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(470px, 714px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3212_006.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1750px, 714px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3214.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(470px, 1226px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3214_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1750px, 1226px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3211_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(470px, 458px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3211.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1750px, 458px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3215_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(470px, 1482px, 0px); opacity: 1;"><img alt="" role="presentation" src="files/3215_006.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1750px, 1482px, 0px); opacity: 1;"></div>
+                            </div>
+                        </div>
+                        <div class="leaflet-pane leaflet-shadow-pane"></div>
+                        <div class="leaflet-pane leaflet-overlay-pane">
+                            <canvas class="leaflet-zoom-animated" style="transform-origin: 50% 50% 0px; transform: translate3d(0px, 12px, 0px);" width="1270" height="1037"></canvas>
+                        </div>
+                        <div class="leaflet-pane leaflet-marker-pane">
+                            <div class="leaflet-marker-icon point-marker point-marker-6uYwR2j0qQQsRopt leaflet-zoom-animated leaflet-interactive leaflet-marker-draggable" style="margin-left: -6px; margin-top: -6px; width: 12px; height: 12px; transform: translate3d(337px, 575px, 0px); z-index: 575;" tabindex="0">
+                                <div class="inner-circle"></div>
+                                <div class="outer-circle"></div>
+                            </div>
+                        </div>
+                        <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                        <div class="leaflet-pane leaflet-popup-pane"></div>
+                        <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(377598px, 822673px, 0px) scale(4096);"></div>
+                    </div>
+                    <div class="leaflet-control-container">
+                        <div class="leaflet-top leaflet-left"></div>
+                        <div class="leaflet-top leaflet-right"></div>
+                        <div class="leaflet-bottom leaflet-left">
+                            <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div>
+                        </div>
+                        <div class="leaflet-bottom leaflet-right">
+                            <div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | MapBox</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="left-floater-comp" data-group="Left Panels">
+                    <div class="action-bar" data-layer="Action Bar">
+                        <h4>UFT <span class="sub-text">ISOCHRONES</span></h4>
+
+                        <div class="action-buttons">
+                            <div class="action-button"><i class="retina-filetypecontent-1074"></i></div>
+                            <div class="action-button"><i class="retina-theessentials-2541"></i></div>
+                            <div class="action-button"><i class="retina-theessentials-2592"></i></div>
+                            <div class="action-button"><i class="retina-theessentials-2538"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="point-mods" data-layer="Point Modifiers">
+                        <div class="point-mod"><i class="retina-theessentials-2548"></i></div>
+                        <div class="point-mod"><i class="retina-theessentials-2540"></i></div>
+                    </div>
+                </div>
+
+                <div class="floater-comp" data-group="Right Panels">
+                    <div class="slider" data-layer="Slider">
+                        <div class="isochrone-options">
+                            <div class="slider-holder"><span class="title"><h5 class="time-number">10</h5><h5 class="time-title">Minutes</h5></span><span class="slider-comp"><div class="rc-slider"><div class="rc-slider-rail"></div><div class="rc-slider-track" style="left: 0%; width: 16.6667%;"></div><div class="rc-slider-step"></div><div tabindex="0" class="rc-slider-handle" style="left: 16.6667%;" role="slider" aria-valuemin="0" aria-valuemax="60" aria-valuenow="10" aria-disabled="false"></div><div class="rc-slider-mark"></div></div></span><span class="animation-btn"><i class="retina-musicsound-1990"></i></span></div>
+                        </div>
+                    </div>
+
+                    <div class="mode-buttons-holder" data-layer="Mode Buttons">
+                        <div class="mode-filter active"><i class="retina-traveltransport-2715"></i></div>
+                        <div class="mode-filter "><i class="retina-traveltransport-2692"></i></div>
+                        <div class="mode-filter active"><i class="retina-traveltransport-2737"></i></div>
+                        <div class="mode-filter "><i class="retina-traveltransport-2712"></i></div>
+                    </div>
+
+                    <div class="map-settings" data-toggle="open">
+                        <button class="toggle" data-layer="Map Settings Toggle">
+                            <i class="retina-theessentials-2582"></i>
+                        </button>
+
+                        <div class="display-options" data-layer="Map Settings">
+                            <h5>VISUAL SETTINGS</h5>
+
+                            <div class="display-option grid-visibility"><i class="retina-design-0837"></i>
+                                <p class="p-sm">Grid</p>
+                                <div class="display-option__content "><i class="retina-theessentials-2622"></i></div>
+                            </div>
+
+                            <hr>
+
+                            <div class="display-option"><i class="retina-traveltransport-2715"></i>
+                                <p class="p-sm">Walk</p>
+                                <div class="display-option__content">
+                                    <div class="display-option__swatch" style="background: rgb(127, 173, 150) none repeat scroll 0% 0%; border-color: rgb(127, 173, 150);"></div>
+                                    <div class="display-option__swatch" style="border-color: rgb(58, 58, 58); border-width: 1px;"></div>
+                                </div>
+                            </div>
+
+                            <div class="display-option"><i class="retina-traveltransport-2692"></i>
+                                <p class="p-sm">Bike</p>
+                                <div class="display-option__content">
+                                    <div class="display-option__swatch" style="background: rgb(158, 93, 165) none repeat scroll 0% 0%; border-color: rgb(158, 93, 165);"></div>
+                                    <div class="display-option__swatch" style="border-color: rgb(58, 58, 58); border-width: 1px;"></div>
+                                </div>
+                            </div>
+
+                            <div class="display-option"><i class="retina-traveltransport-2737"></i>
+                                <p class="p-sm">Car</p>
+                                <div class="display-option__content">
+                                    <div class="display-option__swatch" style="background: rgb(96, 124, 255) none repeat scroll 0% 0%; border-color: rgb(96, 124, 255);"></div>
+                                    <div class="display-option__swatch" style="border-color: rgb(58, 58, 58); border-width: 1px;"></div>
+                                </div>
+                            </div>
+
+                            <div class="display-option"><i class="retina-traveltransport-2712"></i>
+                                <p class="p-sm">Transit</p>
+                                <div class="display-option__content">
+                                    <div class="display-option__swatch" style="background: rgb(216, 163, 0) none repeat scroll 0% 0%; border-color: rgb(216, 163, 0);"></div>
+                                    <div class="display-option__swatch" style="border-color: rgb(58, 58, 58); border-width: 1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="point-panel open">
+                        <div class="point-panel__content">
+                            <div class="point-panel__header"><i class="retina-theessentials-2587"></i>
+                                <h4 class="will-hide">ISOCHRONE POINTS</h4></div>
+                            <p class="p-sm total-points will-hide">1 total points</p>
+                            <ul class="point-panel__list will-hide">
+                                <li class="point-panel__item" data-layer="Point Item 1">
+                                    <div class="name" data-toggle="editing">
+                                        <input class="point-panel__item__input" placeholder="Enter Point Name ..." value="Point 1">
+                                        <div class="read-only">Point 1</div>
+                                    </div>
+                                    <div class="actions"><i class="locate retina-theessentials-2588"></i><i class="delete retina-theessentials-2606"></i></div>
+                                </li>
+
+                                <li class="point-panel__item" data-layer="Point Item 2">
+                                    <div class="name" data-toggle="editing">
+                                        <input class="point-panel__item__input" placeholder="Enter Point Name ..." value="Point 2">
+                                        <div class="read-only">Point 2</div>
+                                    </div>
+                                    <div class="actions"><i class="locate retina-theessentials-2588"></i><i class="delete retina-theessentials-2606"></i></div>
+                                </li>
+
+                                <li class="point-panel__item" data-layer="Point Item 3">
+                                    <div class="name" data-toggle="editing">
+                                        <input class="point-panel__item__input" placeholder="Enter Point Name ..." value="Point 3">
+                                        <div class="read-only">Point 3</div>
+                                    </div>
+                                    <div class="actions"><i class="locate retina-theessentials-2588"></i><i class="delete retina-theessentials-2606"></i></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dist/protoshop.min.js"></script>
 
 </body>
 </html>
