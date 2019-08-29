@@ -1,3 +1,4 @@
+import List from './list';
 import Panel from './panel';
 
 
@@ -35,6 +36,13 @@ export default class ProtoShop {
 
     _constructArtboards() {
         const panel = new Panel(this.elem, 'artboards');
+        const list = new List(panel.body);
+
+        Array.from(document.querySelectorAll('*[data-artboard]')).forEach((elem, i) => {
+            const text = typeof elem.dataset.artboard === 'string ' ? elem.dataset.artboard : `Artboard ${i + 1}`;
+
+            list.append({ elem, text });
+        });
 
         return panel;
     }
