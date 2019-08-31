@@ -32,9 +32,6 @@
   margin-top: -5px;
   width: 14px;
   height: 14px;
-  cursor: pointer;
-  cursor: -webkit-grab;
-  cursor: grab;
   border-radius: 50%;
   border: solid 2px #96dbfa;
   background-color: #fff;
@@ -300,7 +297,7 @@
   border-width: 4px 4px 0;
   border-top-color: #6c6c6c;
 }
-</style><style type="text/css">.rc-tooltip.rc-tooltip-zoom-enter,
+.rc-tooltip.rc-tooltip-zoom-enter,
 .rc-tooltip.rc-tooltip-zoom-leave {
   display: block;
 }
@@ -522,106 +519,8 @@
 .rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
   right: 15%;
 }
-</style><style type="text/css">@import url(https://use.typekit.net/pem1hfh.css);</style><style type="text/css">@import url(https://fast.fonts.net/cssapi/22c45dc8-b267-43c6-897c-ddf64b269121.css);</style><style type="text/css">/*
-div {
-  color:#00429d;
-  color:#07449e;
-  color:#0d469f;
-  color:#1248a0;
-  color:#174aa1;
-  color:#1b4ca2;
-  color:#1e4ea3;
-  color:#2150a3;
-  color:#2452a4;
-  color:#2754a5;
-  color:#2955a6;
-  color:#2c57a7;
-  color:#2e59a8;
-  color:#315ba9;
-  color:#335daa;
-  color:#355fab;
-  color:#3761ac;
-  color:#3a63ac;
-  color:#3c65ad;
-  color:#3e67ae;
-  color:#4069af;
-  color:#426bb0;
-  color:#446eb1;
-  color:#4670b2;
-  color:#4872b3;
-  color:#4974b3;
-  color:#4b76b4;
-  color:#4d78b5;
-  color:#4f7ab6;
-  color:#517cb7;
-  color:#537eb8;
-  color:#5580b9;
-  color:#5682ba;
-  color:#5884ba;
-  color:#5a86bb;
-  color:#5c88bc;
-  color:#5e8abd;
-  color:#608cbe;
-  color:#618fbf;
-  color:#6391bf;
-  color:#6593c0;
-  color:#6795c1;
-  color:#6997c2;
-  color:#6b99c3;
-  color:#6c9bc4;
-  color:#6e9dc4;
-  color:#709fc5;
-  color:#72a1c6;
-  color:#74a4c7;
-  color:#76a6c8;
-  color:#78a8c8;
-  color:#7aaac9;
-  color:#7cacca;
-  color:#7daecb;
-  color:#7fb0cb;
-  color:#81b2cc;
-  color:#83b4cd;
-  color:#85b7ce;
-  color:#87b9ce;
-  color:#89bbcf;
-  color:#8cbdd0;
-  color:#8ebfd1;
-  color:#90c1d1;
-  color:#92c3d2;
-  color:#94c5d3;
-  color:#96c8d4;
-  color:#98cad4;
-  color:#9bccd5;
-  color:#9dced6;
-  color:#9fd0d6;
-  color:#a2d2d7;
-  color:#a4d4d8;
-  color:#a6d6d8;
-  color:#a9d8d9;
-  color:#abdada;
-  color:#aedcda;
-  color:#b1dfdb;
-  color:#b3e1db;
-  color:#b6e3dc;
-  color:#b9e5dd;
-  color:#bce7dd;
-  color:#bfe9de;
-  color:#c2ebde;
-  color:#c5eddf;
-  color:#c8efdf;
-  color:#ccf0df;
-  color:#cff2e0;
-  color:#d3f4e0;
-  color:#d7f6e1;
-  color:#dbf8e1;
-  color:#dff9e1;
-  color:#e4fbe1;
-  color:#e9fce1;
-  color:#effee1;
-  color:#f6ffe1;
-  color:#ffffe0;
-}
-*/
+@import url(https://use.typekit.net/pem1hfh.css);
+@import url(https://fast.fonts.net/cssapi/22c45dc8-b267-43c6-897c-ddf64b269121.css);
 @font-face {
   font-family: 'retinafont';
   src: url("https://s3.amazonaws.com/sasakistrategies.com/design-system/fonts/retinafont.eot");

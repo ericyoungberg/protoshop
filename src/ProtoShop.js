@@ -5,38 +5,56 @@ import Panel from './panel';
 export default class ProtoShop {
 
     constructor() {
-        this.elem = document.createElement('div');
-        this.elem.className = 'protoshop';
-
-        this.panels = {
-            artboards: this._constructArtboards(),
-            layers: this._constructLayers(),
-            phases: this._constructPhases(),
-        };
+        this.app = document.createElement('div');
+        this.app.className = 'protoshop';
 
         this._attachToggles();
 
-        document.querySelector('body').appendChild(this.elem);
+        this.panels = [
+            this._constructArtboards(),
+            this._constructLayers(),
+            this._constructPhases(),
+        ];
+
+        this._constructWindow();
+
+        document.querySelector('body').appendChild(this.app);
     }
 
 
     _attachToggles() {
         Array.from(document.querySelectorAll('*[data-toggle]')).forEach(elem => {
-            elem.addEventListener('click', () => {
-                if (elem.classList.contains(elem.dataset.toggle)) {
-                    elem.classList.remove(elem.dataset.toggle);
+            let { toggle } = elem.dataset;
+            let target = elem;
+
+            if (toggle.indexOf(':') !== -1) {
+                let layer;
+                [layer, toggle] = toggle.split(':');
+
+                target = document.querySelector(`*[data-group="${layer}"], *[data-layer="${layer}"]`);
+                if (!target) {
+                    elem.classList.add('protoshop__error--toggle');
+                    console.error(`"${layer}" is not a valid layer`);
                 }
-                else {
-                    elem.classList.add(elem.dataset.toggle);
-                }
-            });
+            }
+
+            if (target) {
+                elem.addEventListener('click', () => {
+                    if (target.classList.contains(toggle)) {
+                        target.classList.remove(toggle);
+                    }
+                    else {
+                        target.classList.add(toggle);
+                    }
+                });
+            }
         });
     }
 
 
     _constructArtboards() {
-        const panel = new Panel(this.elem, 'artboards');
-        const list = new List(panel.body);
+        const panel = new Panel('artboards');
+        const list = new List();
 
         Array.from(document.querySelectorAll('*[data-artboard]')).forEach((elem, i) => {
             const text = typeof elem.dataset.artboard === 'string ' ? elem.dataset.artboard : `Artboard ${i + 1}`;
@@ -44,21 +62,98 @@ export default class ProtoShop {
             list.append({ elem, text });
         });
 
+        panel.body.appendChild(list.elem);
+
         return panel;
     }
 
 
     _constructLayers() {
-        const panel = new Panel(this.elem, 'layers');
+        const panel = new Panel('layers');
+        const list = new List();
+
+        Array.from(document.querySelectorAll('*[data-group], *[data-layer]')).forEach(elem => {
+            if (elem.dataset.group) {
+                const listNode = list.append({ elem, text: elem.dataset.group });
+                const sublist = new List();
+
+                listNode.appendChild(sublist.elem);
+            }
+            else {
+
+            }
+        });
+
+        panel.body.appendChild(list.elem);
 
         return panel;
     }
 
 
      _constructPhases() {
-        const panel = new Panel(this.elem, 'phases');
+        const panel = new Panel('phases');
 
         return panel;
+    }
+
+
+    _constructWindow() {
+        const _window = document.createElement('div');
+        _window.className = 'protoshop__window';
+
+
+        // Title bar
+        const bar = document.createElement('div');
+        bar.className = 'protoshop__window-bar';
+
+        const minimize = document.createElement('button');
+        minimize.innerText = '—';
+
+        minimize.addEventListener('click', () => {
+            if (_window.classList.contains('protoshop__window--minimized')) {
+                minimize.innerText = '—';
+                _window.classList.remove('protoshop__window--minimized');
+            }
+            else {
+                minimize.innerText = '+';
+                _window.classList.add('protoshop__window--minimized');
+            }
+        });
+
+        bar.appendChild(minimize);
+
+
+        // Tabs
+        const tabs = document.createElement('div');
+        tabs.className = 'protoshop__tabs';
+
+        this.panels.forEach(({ name }) => {
+            const tab = document.createElement('button');
+            tab.className = "protoshop__tab";
+            tab.innerText = name[0].toUpperCase() + name.substr(1, name.length).toLowerCase();
+
+            tab.addEventListener('click', () => {
+                this.panels.forEach(_panel => {
+                    _panel.classList[_panel.name === name ? 'add' : 'remove']('protoshop__panel--active');
+                })
+            });
+
+            tabs.appendChild(tab);
+        });
+
+
+        // Panels
+        const panels = document.createElement('div');
+        panels.className = 'protoshop__panels';
+
+        this.panels.forEach(panel => panels.appendChild(panel.elem));
+
+
+        _window.appendChild(bar);
+        _window.appendChild(tabs);
+        _window.appendChild(panels);
+
+        this.app.appendChild(_window);
     }
 
 };

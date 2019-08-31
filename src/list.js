@@ -3,35 +3,29 @@ import { noop } from './util';
 
 export default class List {
 
-    constructor(parent) {
+    constructor() {
         this.elem = document.createElement('ul');
         this.elem.className = 'protoshop__list';
 
         this.toggle = noop;
-
-        this._active = 'active';
-
-        parent.appendChild(this.elem);
     }
 
 
     append({ elem, text }) {
         const item = document.createElement('li');
 
-        const eye = document.createElement('input');
-        eye.type = 'checkbox';
-
+        const eye = document.createElement('button');
         eye.addEventListener('click', () => {
-            const active = item.classList.contains(this._active);
+            const inactive = item.classList.contains('inactive');
 
-            if (active) {
-                item.classList.remove(this._active);
+            if (inactive) {
+                item.classList.remove('inactive');
             }
             else {
-                item.classList.add(this._active);
+                item.classList.add('inactive');
             }
 
-            this.toggle(elem, active);
+            this.toggle(elem, inactive);
         });
 
         const content = document.createElement('span');
@@ -41,6 +35,13 @@ export default class List {
         item.appendChild(content);
 
         this.elem.appendChild(item);
+
+        return item;
+    }
+
+
+    toggle(elem, inactive) {
+        elem.classList[inactive ? 'remove' : 'add']('protoshop__layer--inactive');
     }
 
 }

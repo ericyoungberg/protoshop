@@ -81,18 +81,18 @@
                     </div>
 
                     <div class="mode-buttons-holder" data-layer="Mode Buttons">
-                        <div class="mode-filter active"><i class="retina-traveltransport-2715"></i></div>
-                        <div class="mode-filter "><i class="retina-traveltransport-2692"></i></div>
-                        <div class="mode-filter active"><i class="retina-traveltransport-2737"></i></div>
-                        <div class="mode-filter "><i class="retina-traveltransport-2712"></i></div>
+                        <div class="mode-filter active" data-toggle="active"><i class="retina-traveltransport-2715"></i></div>
+                        <div class="mode-filter" data-toggle="active"><i class="retina-traveltransport-2692"></i></div>
+                        <div class="mode-filter" data-toggle="active"><i class="retina-traveltransport-2737"></i></div>
+                        <div class="mode-filter" data-toggle="active"><i class="retina-traveltransport-2712"></i></div>
                     </div>
 
-                    <div class="map-settings" data-toggle="open">
-                        <button class="toggle" data-layer="Map Settings Toggle">
+                    <div class="map-settings" data-group="Map Settings">
+                        <button class="toggle" data-layer="Map Settings Toggle" data-toggle="Map Settings:open">
                             <i class="retina-theessentials-2582"></i>
                         </button>
 
-                        <div class="display-options" data-layer="Map Settings">
+                        <div class="display-options" data-layer="Settings">
                             <h5>VISUAL SETTINGS</h5>
 
                             <div class="display-option grid-visibility"><i class="retina-design-0837"></i>
@@ -136,9 +136,10 @@
                         </div>
                     </div>
 
-                    <div class="point-panel open">
+                    <div class="point-panel" data-group="Point Panel">
                         <div class="point-panel__content">
-                            <div class="point-panel__header"><i class="retina-theessentials-2587"></i>
+                            <div class="point-panel__header">
+                                <i class="retina-theessentials-2587" data-toggle="Point Panel:open"></i>
                                 <h4 class="will-hide">ISOCHRONE POINTS</h4></div>
                             <p class="p-sm total-points will-hide">1 total points</p>
                             <ul class="point-panel__list will-hide">
