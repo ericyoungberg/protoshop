@@ -72,6 +72,15 @@ export default class ProtoShop {
         const panel = new Panel('layers');
         const list = new List();
 
+        list.toggle = elem => {
+            if (elem.classList.contains('protoshop__layer--inactive')) {
+                elem.classList.remove('protoshop__layer--inactive');
+            }
+            else {
+                elem.classList.add('protoshop__layer--inactive');
+            }
+        };
+
         Array.from(document.querySelectorAll('*[data-group], *[data-layer]')).forEach(elem => {
             if (elem.dataset.group) {
                 const listNode = list.append({ elem, text: elem.dataset.group });
@@ -126,19 +135,26 @@ export default class ProtoShop {
         // Tabs
         const tabs = document.createElement('div');
         tabs.className = 'protoshop__tabs';
+        this.tabs = [];
 
-        this.panels.forEach(({ name }) => {
+        this.panels.forEach(({ name }, i) => {
             const tab = document.createElement('button');
             tab.className = "protoshop__tab";
             tab.innerText = name[0].toUpperCase() + name.substr(1, name.length).toLowerCase();
 
             tab.addEventListener('click', () => {
-                this.panels.forEach(_panel => {
-                    _panel.classList[_panel.name === name ? 'add' : 'remove']('protoshop__panel--active');
-                })
+                this.panels.forEach((_panel, i) => {
+                    _panel.elem.classList[_panel.name === name ? 'add' : 'remove']('protoshop__panel--active');
+                    this.tabs[i] && this.tabs[i].classList[_panel.name === name ? 'add' : 'remove']('active');
+                });
             });
 
             tabs.appendChild(tab);
+            this.tabs.push(tab);
+
+            if (i === 0) {
+                tab.dispatchEvent(new MouseEvent('click'));
+            }
         });
 
 

@@ -2,8 +2,9 @@
 
 .protoshop {
 
-    $color_bg-dark: #252525;
+    $color_bg-light: #474747;
     $color_bg-medium: #313131;
+    $color_bg-dark: #252525;
 
     $color_font-light: #D9D9D9;
     $color_font-medium: #676767;
@@ -50,7 +51,6 @@
             width: calc(100% + 6px);
             margin-top: -1px;
 
-            color: $color_font-medium;
             text-align: right;
 
             cursor: grab;
@@ -63,6 +63,7 @@
                 width: 30px;
                 margin-right: 8px;
 
+                color: $color_font-medium;
                 text-align: center;
 
                 background: none;
@@ -86,27 +87,37 @@
         button {
             display: inline-block;
 
+            padding: 5px 8px;
+
             color: $color_font-light;
             font-weight: 600;
             font-size: 10px;
 
-            border: none;
             background: none;
-        }
+            border: none;
+            border-bottom: 1px solid $color_bg-dark;
+            border-right: 1px solid $color_bg-dark;
 
-        &:after {
-            content: '';
-            display: block;
-            height: 0px;
-            clear: both;
+            &.active {
+                background: $color_bg-light;
+                border-bottom: 0;
+            }
         }
     }
 
     &__panels {
-
+        background: $color_bg-light;
     }
 
     &__panel {
+        display: none;
+
+        height: max-content;
+        background: $color_bg-light;
+
+        &--active {
+            display: block;
+        }
     }
 
     &__error {
