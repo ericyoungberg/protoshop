@@ -15,6 +15,7 @@ export default class List {
         const item = document.createElement('li');
 
         const eye = document.createElement('button');
+        eye.innerHTML = '&#128065;';
         eye.addEventListener('click', () => {
             const inactive = item.classList.contains('inactive');
 
