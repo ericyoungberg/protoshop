@@ -36,6 +36,12 @@
 
     button { cursor: pointer; }
 
+    &--dragging {
+        pointer-events: all;
+
+        * { cursor: grabbing !important; }
+    }
+
     &__window {
         position: absolute;
 

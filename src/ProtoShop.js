@@ -115,6 +115,8 @@ export default class ProtoShop {
         bar.className = 'protoshop__window-bar';
 
         bar.addEventListener('mousedown', e => {
+            this.app.classList.add('protoshop--dragging');
+
             const barPos = e.target.getBoundingClientRect();
             const offset = {
                 x: e.x - barPos.x,
@@ -126,9 +128,10 @@ export default class ProtoShop {
                 _window.style.top  = `${e.y - offset.y}px`;
             };
 
-            window.addEventListener('mousemove', move);
-            window.addEventListener('mouseup', () => {
-                window.removeEventListener('mousemove', move);
+            this.app.addEventListener('mousemove', move);
+            this.app.addEventListener('mouseup', () => {
+                this.app.classList.remove('protoshop--dragging');
+                this.app.removeEventListener('mousemove', move);
             });
         });
 
