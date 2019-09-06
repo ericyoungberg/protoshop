@@ -114,9 +114,8 @@ export default class ProtoShop {
         const bar = document.createElement('div');
         bar.className = 'protoshop__window-bar';
 
-        bar.addEventListener('mousedown', e => {
-            this.app.classList.add('protoshop--dragging');
 
+        bar.addEventListener('mousedown', e => {
             const barPos = e.target.getBoundingClientRect();
             const offset = {
                 x: e.x - barPos.x,
@@ -124,6 +123,7 @@ export default class ProtoShop {
             };
 
             const move = e => {
+                this.app.classList.add('protoshop--dragging');
                 _window.style.left = `${e.x - offset.x}px`;
                 _window.style.top  = `${e.y - offset.y}px`;
             };
@@ -135,22 +135,24 @@ export default class ProtoShop {
             });
         });
 
+        const minimizer = document.createElement('button');
+        minimizer.innerText = '—';
 
-        const minimize = document.createElement('button');
-        minimize.innerText = '—';
-
-        minimize.addEventListener('click', () => {
+        const minimize = () => {
             if (_window.classList.contains('protoshop__window--minimized')) {
-                minimize.innerText = '—';
+                minimizer.innerText = '—';
                 _window.classList.remove('protoshop__window--minimized');
             }
             else {
-                minimize.innerText = '+';
+                minimizer.innerText = '+';
                 _window.classList.add('protoshop__window--minimized');
             }
-        });
+        };
 
-        bar.appendChild(minimize);
+        bar.addEventListener('dblclick', minimize);
+        minimizer.addEventListener('click', minimize);
+
+        bar.appendChild(minimizer);
 
 
         // Tabs
