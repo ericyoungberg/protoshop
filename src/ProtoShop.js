@@ -56,8 +56,7 @@ export default class ProtoShop {
         const list = new List();
 
         Array.from(document.querySelectorAll('*[data-artboard]')).forEach((elem, i) => {
-            const text = typeof elem.dataset.artboard === 'string ' ? elem.dataset.artboard : `Artboard ${i + 1}`;
-            console.log(text);
+            const text = typeof elem.dataset.artboard === 'string' ? elem.dataset.artboard : `Artboard ${i + 1}`;
 
             list.append({ elem, text });
         });

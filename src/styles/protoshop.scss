@@ -6,7 +6,7 @@
     $color_bg-medium: #383838;
     $color_bg-dark: #2a2a2a;
 
-    $color_font-light: #D9D9D9;
+    $color_font-light: #DfDfDf;
     $color_font-medium: #676767;
     $color_font-dark: #333333;
 
@@ -129,33 +129,45 @@
 
         height: max-content;
         background: $color_bg-light;
+        padding: 6px;
 
         &--active {
             display: block;
         }
+
+        &-body { border: 1px solid $color_bg-dark; }
     }
 
     &__list {
         margin: 0;
         padding: 0;
 
-        border: 1px solid $color_bg-dark;
         list-style: none;
 
         li {
-            margin: 0;
+            margin-left: 0;
             padding: 0;
 
-            border: none;
-            border-bottom: 1px solid $color_bg-dark;
+            font-size: 11px;
+
+            &:not(:last-of-type) { border-bottom: 1px solid $color_bg-dark; }
 
             button {
+                height: 20.25px;
+                padding: 0 5px;
+
+                color: rgba($color_font-light, 1);
+
                 background: none;
                 border: 0;
                 border-right: 1px solid $color_bg-dark;
 
-                color: rgba($color_font-light, 1);
                 transition: color .1s;
+            }
+
+            span {
+                display: inline-block;
+                margin-left: 5px;
             }
 
             &.inactive {
