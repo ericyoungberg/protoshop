@@ -8,6 +8,7 @@
 
     $color_font-light: #D9D9D9;
     $color_font-medium: #676767;
+    $color_font-dark: #333333;
 
     $color_error: #d64a4a;
 
@@ -37,8 +38,6 @@
 
     &__window {
         position: absolute;
-        top: 20px;
-        left: 20px;
 
         width: 240px;
         height: 360px;
@@ -46,6 +45,7 @@
 
         background: linear-gradient(to bottom, #{$color_bg-dark}, #{mix(#666, $color_bg-dark, 30)});
         border-radius: 4px 4px 0 0;
+        box-shadow: 1px 1px 2px 3px rgba($color_bg-dark, .2);
 
         &-bar {
             width: calc(100% + 6px);
@@ -61,14 +61,23 @@
 
             button {
                 width: 30px;
-                margin-right: 8px;
+                margin-right: 0px;
 
-                color: $color_font-medium;
+                color: $color_font-light;
+                font-weight: 600;
                 text-align: center;
 
                 background: none;
                 border: none;
                 outline: none;
+            }
+        }
+
+        &--minimized {
+            height: auto;
+
+            & > *:not(.protoshop__window-bar) {
+                display: none;
             }
         }
     }
@@ -87,11 +96,11 @@
         button {
             display: inline-block;
 
-            padding: 5px 8px;
+            padding: 4px 7px;
 
             color: $color_font-light;
-            font-weight: 600;
-            font-size: 10px;
+            font-weight: 700;
+            font-size: 9px;
 
             background: none;
             border: none;
@@ -117,6 +126,38 @@
 
         &--active {
             display: block;
+        }
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        border: 1px solid $color_bg-dark;
+        list-style: none;
+
+        li {
+            margin: 0;
+            padding: 0;
+
+            border: none;
+            border-bottom: 1px solid $color_bg-dark;
+
+            button {
+                background: none;
+                border: 0;
+                border-right: 1px solid $color_bg-dark;
+
+                color: rgba($color_font-light, 1);
+                transition: color .1s;
+            }
+
+            &.inactive {
+                button {
+                    color: rgba($color_font-light, 0);
+                    transition: color .1s;
+                }
+            }
         }
     }
 

@@ -110,10 +110,28 @@ export default class ProtoShop {
         const _window = document.createElement('div');
         _window.className = 'protoshop__window';
 
-
         // Title bar
         const bar = document.createElement('div');
         bar.className = 'protoshop__window-bar';
+
+        bar.addEventListener('mousedown', e => {
+            const barPos = e.target.getBoundingClientRect();
+            const offset = {
+                x: e.x - barPos.x,
+                y: e.y - barPos.y,
+            };
+
+            const move = e => {
+                _window.style.left = `${e.x - offset.x}px`;
+                _window.style.top  = `${e.y - offset.y}px`;
+            };
+
+            window.addEventListener('mousemove', move);
+            window.addEventListener('mouseup', () => {
+                window.removeEventListener('mousemove', move);
+            });
+        });
+
 
         const minimize = document.createElement('button');
         minimize.innerText = '—';
