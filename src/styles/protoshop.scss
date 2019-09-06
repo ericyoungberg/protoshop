@@ -2,9 +2,9 @@
 
 .protoshop {
 
-    $color_bg-light: #474747;
-    $color_bg-medium: #313131;
-    $color_bg-dark: #252525;
+    $color_bg-light: #4f4f4f;
+    $color_bg-medium: #383838;
+    $color_bg-dark: #2a2a2a;
 
     $color_font-light: #D9D9D9;
     $color_font-medium: #676767;
@@ -49,7 +49,7 @@
         height: 360px;
         padding: 3px;
 
-        background: linear-gradient(to bottom, #{$color_bg-dark}, #{mix(#666, $color_bg-dark, 30)});
+        background: linear-gradient(to bottom, #{$color_bg-dark}, #{mix(#666, $color_bg-dark, 40)});
         border-radius: 4px 4px 0 0;
         box-shadow: 1px 1px 2px 3px rgba($color_bg-dark, .2);
 
@@ -102,10 +102,10 @@
         button {
             display: inline-block;
 
-            padding: 4px 7px;
+            padding: 3px 6px;
 
             color: $color_font-light;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 9px;
 
             background: none;

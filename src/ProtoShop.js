@@ -10,11 +10,10 @@ export default class ProtoShop {
 
         this._attachToggles();
 
-        this.panels = [
-            this._constructArtboards(),
-            this._constructLayers(),
-            this._constructPhases(),
-        ];
+        this.panels = [];
+        document.querySelector('*[data-artboard]') && this.panels.push(this._constructArtboards());
+        document.querySelector('*[data-group], *[data-panel]') && this.panels.push(this._constructLayers());
+        document.querySelector('*[data-phase]') && this.panels.push(this._constructPhases());
 
         this._constructWindow();
 
@@ -58,6 +57,7 @@ export default class ProtoShop {
 
         Array.from(document.querySelectorAll('*[data-artboard]')).forEach((elem, i) => {
             const text = typeof elem.dataset.artboard === 'string ' ? elem.dataset.artboard : `Artboard ${i + 1}`;
+            console.log(text);
 
             list.append({ elem, text });
         });
